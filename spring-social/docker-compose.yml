@@ -1,0 +1,16 @@
+version: "2"
+services:
+
+  postgres:
+    container_name: pet_social_login_postgres_db
+    image: kartoza/postgis:11.0-2.5
+    mem_limit: 256m
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      ALLOW_IP_RANGE: 0.0.0.0/0
+      POSTGRES_DBNAME: yoyo_core_db
+    volumes:
+      - /.docker/volumes/pet_social_login_postgres_db/db/potgres-11.0/data
+    ports:
+      - "5432:5432"
